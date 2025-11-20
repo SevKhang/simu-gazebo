@@ -1,0 +1,90 @@
+<?xml version="1.0" ?>
+<sdf version="1.0">
+  <model name="robotek">
+    <static>true</static>
+
+    <!-- ================= BASE ================= -->
+    <link name="base_link">
+      <pose>0 0 0 0 0 0</pose>
+      <visual name="base_visual">
+        <geometry>
+          <mesh>
+            <uri>model://robotek/mesh/base/base.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+
+      <collision name="base_collision">
+        <geometry>
+          <mesh>
+            <uri>model://robotek/mesh/base/base.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+    </link>
+
+    <!-- ================= LIDAR ================= -->
+    <link name="lidar_link">
+      <!-- chỉnh z nếu cần (ví dụ đặt trên nóc 0.20m) -->
+      <pose>0 0 0.20 0 0 0</pose>
+      <visual name="lidar_visual">
+        <geometry>
+          <mesh>
+            <uri>model://robotek/mesh/sensors/lidar.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <!-- ================= WHEELS ================= -->
+
+    <!-- LEFT FRONT -->
+    <link name="wheel_lf">
+      <pose>0.15 0.15 0 0 0 0</pose>
+      <visual name="wheel_lf_visual">
+        <geometry>
+          <mesh>
+            <uri>model://robotek/mesh/wheels/mecanum_lf.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <!-- RIGHT FRONT -->
+    <link name="wheel_rf">
+      <pose>0.15 -0.15 0 0 0 0</pose>
+      <visual name="wheel_rf_visual">
+        <geometry>
+          <mesh>
+            <uri>model://robotek/mesh/wheels/mecanum_rf.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <!-- LEFT REAR -->
+    <link name="wheel_lr">
+      <pose>-0.15 0.15 0 0 0 0</pose>
+      <visual name="wheel_lr_visual">
+        <geometry>
+          <mesh>
+            <uri>model://robotek/mesh/wheels/mecanum_lr.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <!-- RIGHT REAR -->
+    <link name="wheel_rr">
+      <pose>-0.15 -0.15 0 0 0 0</pose>
+      <visual name="wheel_rr_visual">
+        <geometry>
+          <mesh>
+            <uri>model://robotek/mesh/wheels/mecanum_rr.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+  </model>
+</sdf>
