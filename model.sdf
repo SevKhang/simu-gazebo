@@ -10,6 +10,7 @@
         <geometry>
           <mesh>
             <uri>model://robotek/mesh/base/base.stl</uri>
+            <scale>0.001 0.001 0.001</scale> <!-- mm -> m -->
           </mesh>
         </geometry>
       </visual>
@@ -18,6 +19,7 @@
         <geometry>
           <mesh>
             <uri>model://robotek/mesh/base/base.stl</uri>
+            <scale>0.001 0.001 0.001</scale> <!-- scale collision too -->
           </mesh>
         </geometry>
       </collision>
@@ -31,23 +33,44 @@
         <geometry>
           <mesh>
             <uri>model://robotek/mesh/sensors/lidar.stl</uri>
+            <scale>0.001 0.001 0.001</scale>
           </mesh>
         </geometry>
       </visual>
+
+      <!-- thêm collision cho lidar (nếu cần vật lý/va chạm) -->
+      <collision name="lidar_collision">
+        <geometry>
+          <mesh>
+            <uri>model://robotek/mesh/sensors/lidar.stl</uri>
+            <scale>0.001 0.001 0.001</scale>
+          </mesh>
+        </geometry>
+      </collision>
     </link>
 
     <!-- ================= WHEELS ================= -->
 
     <!-- LEFT FRONT -->
     <link name="wheel_lf">
+      <!-- đặt z = bán kính bánh (chỉnh tùy mesh sau khi scale) -->
       <pose>0.15 0.15 0 0 0 0</pose>
       <visual name="wheel_lf_visual">
         <geometry>
           <mesh>
             <uri>model://robotek/mesh/wheels/mecanum_lf.stl</uri>
+            <scale>0.001 0.001 0.001</scale>
           </mesh>
         </geometry>
       </visual>
+      <collision name="wheel_lf_collision">
+        <geometry>
+          <mesh>
+            <uri>model://robotek/mesh/wheels/mecanum_lf.stl</uri>
+            <scale>0.001 0.001 0.001</scale>
+          </mesh>
+        </geometry>
+      </collision>
     </link>
 
     <!-- RIGHT FRONT -->
@@ -57,9 +80,18 @@
         <geometry>
           <mesh>
             <uri>model://robotek/mesh/wheels/mecanum_rf.stl</uri>
+            <scale>0.001 0.001 0.001</scale>
           </mesh>
         </geometry>
       </visual>
+      <collision name="wheel_rf_collision">
+        <geometry>
+          <mesh>
+            <uri>model://robotek/mesh/wheels/mecanum_rf.stl</uri>
+            <scale>0.001 0.001 0.001</scale>
+          </mesh>
+        </geometry>
+      </collision>
     </link>
 
     <!-- LEFT REAR -->
@@ -69,9 +101,18 @@
         <geometry>
           <mesh>
             <uri>model://robotek/mesh/wheels/mecanum_lr.stl</uri>
+            <scale>0.001 0.001 0.001</scale>
           </mesh>
         </geometry>
       </visual>
+      <collision name="wheel_lr_collision">
+        <geometry>
+          <mesh>
+            <uri>model://robotek/mesh/wheels/mecanum_lr.stl</uri>
+            <scale>0.001 0.001 0.001</scale>
+          </mesh>
+        </geometry>
+      </collision>
     </link>
 
     <!-- RIGHT REAR -->
@@ -81,9 +122,18 @@
         <geometry>
           <mesh>
             <uri>model://robotek/mesh/wheels/mecanum_rr.stl</uri>
+            <scale>0.001 0.001 0.001</scale>
           </mesh>
         </geometry>
       </visual>
+      <collision name="wheel_rr_collision">
+        <geometry>
+          <mesh>
+            <uri>model://robotek/mesh/wheels/mecanum_rr.stl</uri>
+            <scale>0.001 0.001 0.001</scale>
+          </mesh>
+        </geometry>
+      </collision>
     </link>
 
   </model>
