@@ -1,4 +1,151 @@
-<?xml version="1.0" ?>
+<?xml version="1.0"?>
+<sdf version="1.10">
+  <model name="robotek">
+    <static>true</static>
+
+    <!-- ================= BASE ================= -->
+    <link name="base_link">
+      <pose>0 0 0 0 0 0</pose> <!-- tuy chinh vi tri -->
+      <visual name="base_visual">
+        <geometry>
+          <mesh>
+            <uri>model://meshes/base/base.stl</uri>
+            <scale>0.001 0.001 0.001</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.1 0.1 0.2 1</ambient>
+          <diffuse>0.0 0.4 1.0 1</diffuse> <!-- xanh dương -->
+          <specular>0.2 0.2 0.2 1</specular>
+        </material>
+      </visual>
+
+      <collision name="base_collision">
+        <geometry>
+          <mesh>
+            <uri>model://meshes/base/base.stl</uri>
+            <scale>0.001 0.001 0.001</scale>
+          </mesh>
+        </geometry>
+      </collision>
+    </link>
+
+    <!-- ================= LIDAR ================= -->
+    <link name="lidar_link">
+      <pose>0 0 0.20 0 0 3.14</pose> <!-- tuy chinh vi tri -->
+      <visual name="lidar_visual">
+        <geometry>
+          <mesh>
+            <uri>model://meshes/sensors/lidar.stl</uri>
+            <scale>0.001 0.001 0.001</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.2 0.0 0.0 1</ambient>
+          <diffuse>1.0 0.1 0.1 1</diffuse> <!-- đỏ -->
+          <specular>0.3 0.1 0.1 1</specular>
+        </material>
+      </visual>
+
+      <collision name="lidar_collision">
+        <geometry>
+          <mesh>
+            <uri>model://meshes/sensors/lidar.stl</uri>
+            <scale>0.001 0.001 0.001</scale>
+          </mesh>
+        </geometry>
+      </collision>
+    </link>
+
+    <!-- ================= WHEELS ================= -->
+
+    <!-- LEFT FRONT -->
+    <link name="wheel_lf">
+      <pose>0.15 0.15 0 0 0 0</pose> <!-- tuy chinh vi tri -->
+      <visual name="wheel_lf_visual">
+        <geometry>
+          <mesh>
+            <uri>model://meshes/wheels/mecanum_lf.stl</uri>
+            <scale>0.001 0.001 0.001</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.15 0.15 0.15 1</ambient>
+          <diffuse>0.6 0.6 0.6 1</diffuse> <!-- xám -->
+        </material>
+      </visual>
+      <collision name="wheel_lf_collision">
+        <geometry>
+          <mesh>
+            <uri>model://meshes/wheels/mecanum_lf.stl</uri>
+            <scale>0.001 0.001 0.001</scale>
+          </mesh>
+        </geometry>
+      </collision>
+    </link>
+
+    <!-- RIGHT FRONT -->
+    <link name="wheel_rf">
+      <pose>0.15 -0.15 0 0 0 0</pose> <!-- tuy chinh vi tri -->
+      <visual name="wheel_rf_visual">
+        <geometry>
+          <mesh>
+            <uri>model://meshes/wheels/mecanum_rf.stl</uri>
+            <scale>0.001 0.001 0.001</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.15 0.15 0.15 1</ambient>
+          <diffuse>0.6 0.6 0.6 1</diffuse>
+        </material>
+      </visual>
+      <collision name="wheel_rf_collision">
+        <geometry>
+          <mesh>
+            <uri>model://meshes/wheels/mecanum_rf.stl</uri>
+            <scale>0.001 0.001 0.001</scale>
+          </mesh>
+        </geometry>
+      </collision>
+    </link>
+
+    <!-- LEFT REAR -->
+    <link name="wheel_lr">
+      <pose>-0.15 0.15 0 0 0 0</pose> <!-- tuy chinh vi tri -->
+      <visual name="wheel_lr_visual">
+        <geometry>
+          <mesh>
+            <uri>model://meshes/wheels/mecanum_lr.stl</uri>
+            <scale>0.001 0.001 0.001</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.15 0.15 0.15 1</ambient>
+          <diffuse>0.6 0.6 0.6 1</diffuse>
+        </material>
+      </visual>
+      <collision name="wheel_lr_collision">
+        <geometry>
+          <mesh>
+            <uri>model://meshes/wheels/mecanum_lr.stl</uri>
+            <scale>0.001 0.001 0.001</scale>
+          </mesh>
+        </geometry>
+      </collision>
+    </link>
+
+    <!-- RIGHT REAR -->
+    <link name="wheel_rr">
+      <pose>-0.15 -0.15 0 0 0 0</pose> <!-- tuy chinh vi tri -->
+      <visual name="wheel_rr_visual">
+        <geometry>
+          <mesh>
+            <uri>model://meshes/wheels/mecanum_rr.stl</uri>
+            <scale>0.001 0.001 0.001</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.15 0.15 0.15 1</ambient><?xml version="1.0" ?>
 <sdf version="1.0">
   <model name="robotek">
     <static>true</static>
@@ -86,50 +233,14 @@
       </visual>
       <collision name="wheel_rf_collision">
         <geometry>
-          <mesh>
-            <uri>model://robotek/mesh/wheels/mecanum_rf.stl</uri>
-            <scale>0.001 0.001 0.001</scale>
-          </mesh>
-        </geometry>
-      </collision>
-    </link>
-
-    <!-- LEFT REAR -->
-    <link name="wheel_lr">
-      <pose>-0.15 0.15 0 0 0 0</pose>
-      <visual name="wheel_lr_visual">
-        <geometry>
-          <mesh>
-            <uri>model://robotek/mesh/wheels/mecanum_lr.stl</uri>
-            <scale>0.001 0.001 0.001</scale>
-          </mesh>
-        </geometry>
-      </visual>
-      <collision name="wheel_lr_collision">
-        <geometry>
-          <mesh>
-            <uri>model://robotek/mesh/wheels/mecanum_lr.stl</uri>
-            <scale>0.001 0.001 0.001</scale>
-          </mesh>
-        </geometry>
-      </collision>
-    </link>
-
-    <!-- RIGHT REAR -->
-    <link name="wheel_rr">
-      <pose>-0.15 -0.15 0 0 0 0</pose>
-      <visual name="wheel_rr_visual">
-        <geometry>
-          <mesh>
-            <uri>model://robotek/mesh/wheels/mecanum_rr.stl</uri>
-            <scale>0.001 0.001 0.001</scale>
-          </mesh>
-        </geometry>
+</sdf>
+          <diffuse>0.6 0.6 0.6 1</diffuse>
+        </material>
       </visual>
       <collision name="wheel_rr_collision">
         <geometry>
           <mesh>
-            <uri>model://robotek/mesh/wheels/mecanum_rr.stl</uri>
+            <uri>model://meshes/wheels/mecanum_rr.stl</uri>
             <scale>0.001 0.001 0.001</scale>
           </mesh>
         </geometry>
